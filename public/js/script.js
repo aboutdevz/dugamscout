@@ -1,15 +1,15 @@
 $(function(){
-
-    $('#delete').click(function(){
+    $('#delete').hover(function(){
         return confirm('Yakin Mau Di Hapus?');
+        
     });
 
     $('#tampilUbah').on('click',function() {
-
+        const path = window.location.origin+"/public/";
         const id = $(this).data('id');
        $.ajax({
 
-           url: 'http://localhost/public/Admin/getUbah',
+           url: path+'Admin/getUbah',
            data: {id : id},
            method: 'post',
            dataType: 'json',
