@@ -93,34 +93,41 @@ class Admin extends controller{
         ];
         $getTag = $data['post']['tagUbah'];
         if (isset($data['post']['submitUbah'])){
-            
-            if(!isset($data['file']['tmp_name'])){
-                Flasher::setFlash('Gambar','Silahkan Dipilih','danger');
-                header('Location: '.BASEURL.'Nav/index/'.$getTag['tag'].'');
-            }else{
-                    $fileNama = $data['file']['name'];
-                    $fileSize = $data['file']['size'];
-                    $targetdir = URLGAMBAR;
-                    $targetfile = $targetdir . basename($fileNama);
-                    $fileType = strtolower(pathinfo($targetfile,PATHINFO_EXTENSION));
-                    if(!file_exists($targetfile)){
-                        if ($fileSize > 2000 && $fileType !="jpg" && $fileType != "png" && $fileType !="jpeg" && $fileType != "gif"){
-                            Flasher::setFlash('Gambar tidak sesuai','Ukuran','danger');
-                            header('Location: '.BASEURL.''.$getTag['tag'].'');
-                        }else{
-                                $this->model('Postingan_model')->updatePostingan($data);
-                                move_uploaded_file($data['file']['tmp_name'],$targetfile);
-                                Flasher::setFlash('Postingan Berhasil','Di Update','success');
+            if (strlen($data['post']['namaGambar'])>0){
+                $data['image'] = $_POST['namaGambar'];
+                $this->model('Postingan_model')->updatePostingan($data);
+                Flasher::setFlash('Postingan Berhasil','Di Update','success');
+                header('Location: '.BASEURL.'Admin/viewTambah');
+            }elseif(strlen($data['file']['name'])>0){
+                if(!isset($data['file']['tmp_name'])){
+                    Flasher::setFlash('Gambar','Silahkan Dipilih','danger');
+                    header('Location: '.BASEURL.'Nav/index/'.$getTag['tag'].'');
+                }else{
+                        $fileNama = $data['file']['name'];
+                        $fileSize = $data['file']['size'];
+                        $targetdir = BASEURL.'img/';
+                        $data['image']=''.BASEURL.'img/'.$_FILES['fileGambarUbah']['name'];
+                        $targetfile = $targetdir . basename($fileNama);
+                        $fileType = strtolower(pathinfo($targetfile,PATHINFO_EXTENSION));
+                        if(!file_exists($targetfile)){
+                            if ($fileSize > 2000 && $fileType !="jpg" && $fileType != "png" && $fileType !="jpeg" && $fileType != "gif"){
+                                Flasher::setFlash('Gambar tidak sesuai','Ukuran','danger');
+                                header('Location: '.BASEURL.''.$getTag['tag'].'');
+                            }else{
+                                    $this->model('Postingan_model')->updatePostingan($data);
+                                    move_uploaded_file($data['file']['tmp_name'],$targetfile);
+                                    Flasher::setFlash('Postingan Berhasil','Di Update','success');
+                                    header('Location: '.BASEURL.'Nav/index/'.''.$getTag.'');
+                                }
+                            }else{
+                                Flasher::setFlash('Postingan gagal','Di Update','danger');
                                 header('Location: '.BASEURL.'Nav/index/'.''.$getTag.'');
-                            }
-                        }else{
-                            Flasher::setFlash('Gambar',' Sudah ada','danger');
-                            header('Location: '.BASEURL.'Admin/viewTambah');
                         }
-                    }
                 
+                }
+            }
 
         }
-
     }
+
 }

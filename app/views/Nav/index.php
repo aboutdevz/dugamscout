@@ -75,7 +75,7 @@
       <div class="modal-body">
         <form action="<?= BASEURL;?>Admin/Ubah" method="POST" enctype="multipart/form-data">
           <input type="hidden" id="idUbah" name="idUbah">
-              
+              <input type="hidden" id="namaGambar" name="namaGambar">
             <div class="form-group">
               <label for="judulUbah">Judul</label>
               <input type="text" class="form-control" id="judulUbah" name="judulUbah" required>
@@ -99,8 +99,9 @@
               <textarea class="form-control" id="isiUbah" name="isiUbah" rows="6" required></textarea>
             </div>
             <div class="form-group">
+            <label for="gambarUbah">Jika gambar tidak ingin di ubah biarkan kosong</label>
               <label for="gambarUbah">File Gambar : </label> 
-              <input type="file" id="gambarUbah" name="fileGambarUbah" required>
+              <input type="file" id="gambarUbah" name="fileGambarUbah">
             </div>
 
             <div class="modal-footer">

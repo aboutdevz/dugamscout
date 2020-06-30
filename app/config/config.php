@@ -7,7 +7,7 @@ if ($protcheck == "on"){
     $prot = 'http://';
 }
 $host = $_SERVER['HTTP_HOST'];
-$path = $prot.$host.'/public/';
+$path = $prot.$host.'/dugamscout/public/';
 
 // base url
 define('BASEURL',$path);
@@ -19,4 +19,4 @@ define('URLTAG',$path.'Postingan/index/');
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','');
+define('DB_NAME','dg');

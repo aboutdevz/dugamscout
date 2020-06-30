@@ -1,7 +1,7 @@
 
 
 <div class="container-fluid mt-5">
-  <div id="CarouselHero" class="carousel slide" data-ride="carousel">
+  <div id="CarouselHero" class="carousel slide carousel-fade" data-ride="carousel">
   <ol class="carousel-indicators">
     <?php $hus = $data['content']['resultSet'] ; ?>
     <?php for ($i=0;$i<=count($hus)-1;$i++):?>
@@ -14,9 +14,9 @@
         <?php $src = $hus?>
         <?php foreach($src as $pos): ?>
           <?php if($counter == 3){break;} ?>
-        <div class="carousel-item <?php if ($counter == 1){echo'active';}?>">
+        <div class="carousel-item <?php if ($counter == 1){echo'active';}?>" data-interval="10000">
           <img class="carousel-item-img d-block w-100" src="<?=$pos['gambar'];?>" alt="">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block ">
             <h5><?=$pos['judul']; ?></h5>
             <p><?=$pos['keterangan'];?></p>
           </div>
