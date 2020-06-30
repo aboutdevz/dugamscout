@@ -4,7 +4,7 @@
             
             public function __construct($gambar,$hreftag,$tag,$judul,$keterangan,$hrefbutton,$buttontag,$author,$tanggal,$pils,$id){
                 echo '
-                    <div class="card m-2 shadow" >
+                    <div class="card m-2 mb-5 shadow" >
                         <img class="card-img-top shadow-sm" src="'.$gambar.'"/>
                             <div class="card-body">
                                 <a href="'.BASEURL.'Nav/'.$hreftag.'"><small class="text-primary font-weight-bold">'.$tag.'</small></a>
