@@ -15,6 +15,6 @@ jalankan xampp dan ke localhost
 
 ## Wiki :books:
 
-Panduan alur applikasi
+Panduan alur aplikasi
 https://github.com/aboutdevz/dugamscout/wiki
 
