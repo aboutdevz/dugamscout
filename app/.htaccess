@@ -1,0 +1,3 @@
+# jika user mangakses folder app maka aksess forbidden karena folder app tidak mengandung index
+
+Options -Indexes

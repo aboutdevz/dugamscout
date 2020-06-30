@@ -1,0 +1,8 @@
+Options -Multiviews
+
+# menulis ulang url
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+Rewriterule ^(.*)$ index.php?url=$1 [L]

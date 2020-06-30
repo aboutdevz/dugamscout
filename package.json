@@ -1,0 +1,19 @@
+{
+  "name": "dugamscout",
+  "version": "1.0.0",
+  "description": "Web app CMS dibuat untuk dugamscout menggunakkan php",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aboutdevz/dugamscout.git"
+  },
+  "author": "Jeber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aboutdevz/dugamscout/issues"
+  },
+  "homepage": "https://github.com/aboutdevz/dugamscout#readme"
+}
