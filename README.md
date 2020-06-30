@@ -13,4 +13,8 @@ setelah itu ubah file app/public/config.php sesuaikan dengan database sendiri
 
 jalankan xampp dan ke localhost
 
+## Wiki :books:
+
+Panduan alur applikasi
+https://github.com/aboutdevz/dugamscout/wiki
 
