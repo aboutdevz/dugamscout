@@ -4,7 +4,7 @@
     <?php 
 
         class cardDeck{
-            public function __construct($gambar,$hreftag,$tag,$judul,$keterangan,$hrefbutton,$author,$tanggal){
+            public function __construct($gambar,$hreftag,$tag,$judul,$keterangan,$hrefbutton,$buttontag,$author,$tanggal){
                 
                 
                 echo '
@@ -14,7 +14,7 @@
                                 <a href="'.BASEURL.'/Nav/'.$hreftag.'"><small class="text-primary font-weight-bold">'.$tag.'</small></a>
                                 <h4 class="card-title">'.$judul.'</h5>
                                 <p>'.$keterangan.'</p>
-                                <button class="btn bg-primary text-white shadow-sm"><a href="'.BASEURL.'Postingan/index/'.$hrefbutton.'" class="text-white">check out!</a></button>
+                                <button class="btn bg-primary text-white shadow-sm"><a href="'.BASEURL.'Postingan/index/'.$hrefbutton.'/'.$buttontag.'" class="text-white">check out!</a></button>
                             </div>
                         <div class="card-footer">
                             <p class="blockquote-footer">Author <a href="#About" class="card-link">'.$author.'</a> '.$tanggal.'</p>
@@ -33,7 +33,7 @@
             <?php $counter1 = 1;?>
             
             <?php foreach($data['postinganHome1'] as $pos):?>
-                <?php new cardDeck($pos['gambar'],$pos['tag'],$pos['tag'],$pos['judul'],$pos['keterangan'],$pos['id'],$pos['author'],$pos['tanggal']); ?>
+                <?php new cardDeck($pos['gambar'],$pos['tag'],$pos['tag'],$pos['judul'],$pos['keterangan'],$pos['id'],$pos['tag'],$pos['author'],$pos['tanggal']); ?>
                 <?php if ($counter1 == 3) :?>
                 <?php break; ?>
                 <?php endif;?>
@@ -46,7 +46,7 @@
         <div class="card-deck mt-2">
             <?php $counter2=1?>
             <?php foreach($a = array_reverse($data['postinganHome1']) as $pos):?>
-                <?php new cardDeck($pos['gambar'],$pos['tag'],$pos['tag'],$pos['judul'],$pos['keterangan'],$pos['id'],$pos['author'],$pos['tanggal']); ?>
+                <?php new cardDeck($pos['gambar'],$pos['tag'],$pos['tag'],$pos['judul'],$pos['keterangan'],$pos['id'],$pos['tag'],$pos['author'],$pos['tanggal']); ?>
                 <?php if ($counter2 == 3): ?>
                 <?php break;?>
                 <?php endif;?>

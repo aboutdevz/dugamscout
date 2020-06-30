@@ -2,7 +2,7 @@
 
         class card{
             
-            public function __construct($gambar,$hreftag,$tag,$judul,$keterangan,$hrefbutton,$author,$tanggal,$pils,$id){
+            public function __construct($gambar,$hreftag,$tag,$judul,$keterangan,$hrefbutton,$buttontag,$author,$tanggal,$pils,$id){
                 echo '
                     <div class="card m-2 shadow" >
                         <img class="card-img-top shadow-sm" src="'.$gambar.'"/>
@@ -10,7 +10,7 @@
                                 <a href="'.BASEURL.'Nav/'.$hreftag.'"><small class="text-primary font-weight-bold">'.$tag.'</small></a>
                                 <h4 class="card-title">'.$judul.'</h5>
                                 <p>'.$keterangan.'</p>
-                                <button class="btn bg-primary text-white shadow-sm"><a href="'.BASEURL.'Postingan/index/'.$hrefbutton.'" class="text-white">check out!</a></button>
+                                <button class="btn bg-primary text-white shadow-sm"><a href="'.BASEURL.'Postingan/index/'.$hrefbutton.'/'.$buttontag.'" class="text-white">check out!</a></button>
                             </div>
                         <div class="card-footer">
                             <p class="d-inline blockquote-footer">Author <a href="#About" class="card-link">'.$author.'</a> '.$tanggal.'</p>
@@ -52,7 +52,7 @@
         <div class="row p-md-5">
             <div class="col-12 ">
             <?php foreach($data['link'] as $pos):?>
-                <?php new card($pos['gambar'],$pos['tag'],$pos['tag'],$pos['judul'],$pos['keterangan'],$pos['id'],$pos['author'],$pos['tanggal'],$pils,$pos['id']); ?>
+                <?php new card($pos['gambar'],$pos['tag'],$pos['tag'],$pos['judul'],$pos['keterangan'],$pos['id'],$pos['tag'],$pos['author'],$pos['tanggal'],$pils,$pos['id']); ?>
             <?php endforeach; ?>
             </div>
         </div>

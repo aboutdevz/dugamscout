@@ -2,13 +2,11 @@
 
 class Postingan extends controller{
 
-    public function index($id){
-        $postingan = $this->model('Postingan_model')->getPostinganId($id);
-        $link = $this->model('Postingan_model')->getPostinganNav();
+    public function index($id,$tag){
         $data = [
-            'judul' => 'Postingan | '.$postingan['judul'],
-            'postingan' => $postingan,
-            'link' => $link
+            'judul' => 'Postingan | '.$this->model('Postingan_model')->getPostinganId($id)['judul'],
+            'postingan' => $this->model('Postingan_model')->getPostinganId($id),
+            'link' => $this->model('Postingan_model')->getNav($tag)
         ];
         $this->view('templates/header',$data);
         $this->view('Postingan/index',$data);

@@ -27,3 +27,6 @@ body{
  .title{
     color:red;
  }
+.sideNav{
+    max-width:100%;
+}

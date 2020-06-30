@@ -19,20 +19,8 @@
             </div>
             ';
         }
-        public static function nav($taghref,$tag,$postinganhref,$judul){
-            echo '
-            <div class="card mb-2 border-danger">
-                <div class="card-header text-primary">
-                    <a class="nav-link" href="'.BASEURL.$taghref.'">'.$tag.'</a>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a class="nav-link" href="#">-->  Link 1</a></li>
-                    <li class="list-group-item"><a class="nav-link" href="#">-->  Link 2</a></li>
-                    <li class="list-group-item"><a class="nav-link" href="#">-->  Link 3</a></li>
-                </ul>
-            </div>
-            ';
-        }
+            
+       
     }
 
 ?>
@@ -41,12 +29,31 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-md-8 col-lg-9 block border-primary shadow-lg">
+    <div class="row mt-5">
+        <div class="col-12  shadow-lg">
         <?php
             $pos = $data['postingan']; 
             viewPostingan::content($pos['gambar'],$pos['tag'],$pos['tag'],$pos['judul'],$pos['author'],$pos['tanggal'],$pos['isi']);
         ?>
+        </div>
+    
+
+        <div class="col-12 mt-5">
+        <h1 class="text-primary mt-5 mb-5">Lihat Postingan Yang Lain</h1>
+            <div class="sideNav card m-2 shadow-lg ">
+                <div class="card-header text-primary">
+                <?php $tag = $data['link']['resultSet'][0]['tag'];?>
+                    <a class="nav-link" href="<?= BASEURL.'Nav/index/'.$tag;?>"><?=$tag; ?></a>
+                </div>
+                <ul class="list-group list-group-flush w-100">
+                <?php $counter = 1;?>
+                <?php foreach($data['link']['resultSet'] as $nav):?>
+                <?php if($counter == 5){break;}?>
+                    <li class="list-group-item"><a class="nav-link" href="<?=BASEURL.'Postingan/index/'.$nav['id'].'/'.$tag;?>">-->  <?=$nav['judul'];?></a></li>
+                    <?php $counter++;?>
+                <?php endforeach;?>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
