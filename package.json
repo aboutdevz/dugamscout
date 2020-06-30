@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Web app CMS dibuat untuk dugamscout menggunakkan php",
   "main": "index.php",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "cara install": "clone repo ini lalu di massukkan ke htdocs di xampp. lalu ubah settingan database di file app/config/config.php",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aboutdevz/dugamscout.git"

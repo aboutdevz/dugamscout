@@ -17,6 +17,6 @@ define('URLTAG',$path.'Postingan/index/');
 //db
 
 define('DB_HOST','localhost');
-define('DB_USER','aboutdev_dugamscout');
-define('DB_PASS','DastinChalista');
-define('DB_NAME','aboutdev_dg');
+define('DB_USER','root');
+define('DB_PASS','');
+define('DB_NAME','');
