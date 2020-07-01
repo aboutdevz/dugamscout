@@ -21,10 +21,10 @@ https://github.com/aboutdevz/dugamscout/wiki
 
 ## Upcoming Features
 
--pengunguman / informasi
--pengkelasan admin
--administrasi umum dan personal di pisah
--profil anggota dan pembina di list berdasarkan tahun
--nav prestasi
--graph jumlah anggota dari tahun ke tahun
--point of sale kedai pramuka
+-   pengunguman / informasi
+-   pengkelasan admin
+-   administrasi umum dan personal di pisah
+-   profil anggota dan pembina di list berdasarkan tahun
+-   nav prestasi
+-   graph jumlah anggota dari tahun ke tahun
+-   point of sale kedai pramuka
