@@ -11,8 +11,8 @@
                     <div class="card m-2 shadow" >
                         <img class="card-img-top shadow-sm" src="'.$gambar.'"/>
                             <div class="card-body">
-                                <a href="'.BASEURL.'/Nav/'.$hreftag.'"><small class="text-primary font-weight-bold">'.$tag.'</small></a>
-                                <h4 class="card-title">'.$judul.'</h5>
+                                <a href="'.BASEURL.'/Nav/'.$hreftag.'"><small class="text-primary">'.$tag.'</small></a>
+                                <h4 class="card-title font-weight-bold">'.$judul.'</h5>
                                 <p>'.$keterangan.'</p>
                                 <button class="btn bg-primary text-white shadow-sm"><a href="'.BASEURL.'Postingan/index/'.$hrefbutton.'/'.$buttontag.'" class="text-white">check out!</a></button>
                             </div>

@@ -6,10 +6,10 @@
             echo'
             <div class="header border-bottom border-rounded mt-5 pb-2 mb-5">
                 <img class="bodo mx-auto d-block" src="'.$gambar.'" alt="gambar orang lagi baris"/>
-                <a href="'.BASEURL.$taghref.'"><small class="text-primary font-weight-bold lead">'.$tag.'</small></a>
-                <h5 class="title display-4">'.$judul.'</h5>
+                <a href="'.BASEURL.$taghref.'"><small class="text-primary lead">'.$tag.'</small></a>
+                <h1 class=" mt-3 font-weight-bold">'.$judul.'</h1>
                 <div class="text-lead text-white bg-dark border-primary p-3 mt-3">
-                    <p class="m-1">Author: <a class="text-primary" href="#About">'.$author.'</a> Date Released: <span class="text-primary">'.$tanggal.'</sp></p>
+                    <p class="m-1">Author: <a class="text-white" href="#About">'.$author.' </a>| Date Released: <span class="text-white">'.$tanggal.'</sp></p>
                 </div>
             </div>
             <div class="content m-5">
@@ -39,7 +39,7 @@
     
 
         <div class="col-12 mt-5">
-        <h1 class="text-primary mt-5 mb-5">Lihat Postingan Yang Lain</h1>
+        <h1 class="text-primary mt-5 mb-5 font-weight-bold">Lihat Postingan Yang Lain</h1>
             <div class="sideNav card m-2 shadow-lg ">
                 <div class="card-header text-primary">
                 <?php $tag = $data['link']['resultSet'][0]['tag'];?>

@@ -8,6 +8,7 @@
     <title>Halaman <?= $data['judul'];?></title>
     <link id="icon" rel = "icon" type="image/png"  href =  "<?=BASEURL;?>img/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= BASEURL; ?>css/style.css">
     <style>
     @media (min-width: 576px) {
@@ -34,7 +35,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light shadow">
             <a class="navbar-brand" href="#"><img class="d-inline-block" style="height:10vw;width:auto;" src="<?=BASEURL?>img/favicon.png"/></a>
-            <h4 class="text-center">Dugam Scout</h4>
+            <h4 class="text-center font-weight-bold">Dugam Scout</h4>
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
