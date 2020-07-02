@@ -21,7 +21,7 @@ https://github.com/aboutdevz/dugamscout/wiki
 
 ## Upcoming Features
 
--   pengunguman / informasi
+-   pengunguman / informasi     :heavy_check_mark:
 -   pengkelasan admin
 -   administrasi umum dan personal di pisah
 -   profil anggota dan pembina di list berdasarkan tahun
