@@ -26,5 +26,6 @@ https://github.com/aboutdevz/dugamscout/wiki
 -   administrasi umum dan personal di pisah
 -   profil anggota dan pembina di list berdasarkan tahun
 -   nav prestasi
+-   api google map
 -   graph jumlah anggota dari tahun ke tahun
 -   point of sale kedai pramuka
