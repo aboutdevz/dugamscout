@@ -15,7 +15,7 @@ class notFound{
         $msg = $_SESSION['notFound'];
         echo '
             <div class="d-flex align-items-center shadow-lg bg-'.$msg['tipe'].' p-5">
-                <h1 class="display-5">'.$msg['pesan'].' '.$msg['aksi'].'</h1>
+                <h1 class="font-weight-bold text-white">'.$msg['pesan'].' '.$msg['aksi'].'</h1>
             </div>
         ';
     }

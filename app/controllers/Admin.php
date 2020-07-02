@@ -130,4 +130,13 @@ class Admin extends controller{
         }
     }
 
+    public function Pengunguman(){
+        $data = [
+            'keterangan' => $_POST['keteranganPengunguman']
+        ];
+        
+        Flasher::setPengunguman($data['keterangan']);
+        header('Location: '.BASEURL.'');
+    }
+
 }

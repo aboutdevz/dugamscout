@@ -5,11 +5,11 @@
         public static function content($gambar,$taghref,$tag,$judul,$author,$tanggal,$isi){
             echo'
             <div class="header border-bottom border-rounded mt-5 pb-2 mb-5">
-                <img class="bodo mx-auto d-block" src="'.$gambar.'" alt="gambar orang lagi baris"/>
+                <img class="bodo mx-auto d-block" src="'.$gambar.'" alt=""/>
                 <a href="'.BASEURL.$taghref.'"><small class="text-primary lead">'.$tag.'</small></a>
                 <h1 class=" mt-3 font-weight-bold">'.$judul.'</h1>
                 <div class="text-lead text-white bg-dark border-primary p-3 mt-3">
-                    <p class="m-1">Author: <a class="text-white" href="#About">'.$author.' </a>| Date Released: <span class="text-white">'.$tanggal.'</sp></p>
+                    <p class="m-1">Author: <a class="text-primary" href="#About">'.$author.' </a>| Date Released: <span class="text-white">'.$tanggal.'</sp></p>
                 </div>
             </div>
             <div class="content m-5">
@@ -29,6 +29,7 @@
 
 
 <div class="container">
+
     <div class="row mt-5">
         <div class="col-12  shadow-lg">
         <?php

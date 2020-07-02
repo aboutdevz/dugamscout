@@ -68,7 +68,7 @@
                         else{
                             echo '
                             <li class="nav-item text-primary">
-                            <a id="tampilTambah" class="nav-link text-dark" href="'.BASEURL.'Admin/viewTambah">Tambah Postingan</a>
+                            <a id="tampilTambah" class="nav-link text-dark" href="'.BASEURL.'Admin/viewTambah">Admin</a>
                             </li>
                             <li class="nav-item text-primary">
                                 <a class="nav-link text-primary" href="'.BASEURL.'Login/Logout">Logout</a>
@@ -80,4 +80,10 @@
                 </ul>
             </div>
         </nav>
+
+        <div class="row mt-3">
+          <div class="col-12">
+            <?php Flasher::Pengunguman();?>
+          </div>
+        </div>
     

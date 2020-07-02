@@ -22,11 +22,30 @@ class Flasher{
     }
   }
 
-  public static function Logout(){
-    if (isset($_SESSION['userId'])){
-      echo '<a class= "nav-item nav-link navbar-text" onclick="return confirm(Yakin Mau Logout?);" href="'.BASEURL.'Login/Logout">Logout</a>';
-    }else{
-      echo '<a class= "nav-item nav-link navbar-text" href="'.BASEURL.'Login">Login</a>';
+  public static function setPengunguman($pesan){
+    $_SESSION['pengunguman'] = [
+        'pesan' => $pesan,
+    ];
+  }
+
+  public static function Pengunguman(){
+    if (isset($_SESSION['pengunguman'])){
+      echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>'.$_SESSION['pengunguman']['pesan'].'</strong>
+
+  </div>';
+  $inactive = 60*60*24;
+  if( !isset($_SESSION['timeout']) )
+  $_SESSION['timeout'] = time() + $inactive; 
+  
+  $session_life = time() - $_SESSION['timeout'];
+  
+  if($session_life > $inactive)
+  {  session_destroy();}
+  
+  $_SESSION['timeout']=time();
     }
   }
+
+  
 }
