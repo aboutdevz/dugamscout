@@ -27,7 +27,6 @@
   
 <div class="tab-pane container mt-5 fade" id="pengunguman">
 <h1 class="text-primary mb-2">Tambah Pengunguman</h1>
-<p class="text-warning">Pengunguman akan di set selama 24 jam</p>
 <form id="form" action="<?=BASEURL?>Admin/Pengunguman" method="POST">
 
     <div class="col-12 col-md -6 mt-5">
