@@ -5,6 +5,7 @@
   <ol class="carousel-indicators">
     <?php $hus = $data['content']['resultSet'] ; ?>
     <?php for ($i=0;$i<=count($hus)-1;$i++):?>
+    <?php if ($i+1 == 6){break;} ?>
         <li data-target="#CarouselHero" data-slide-to="<?=$i?>" class="<?php if ($i < 1){echo 'active';}?>"></li>
     <?php endfor; ?>
       </ol>
@@ -13,7 +14,7 @@
       <div class="carousel-inner">
         <?php $src = $hus?>
         <?php foreach($src as $pos): ?>
-          <?php if($counter == 3){break;} ?>
+          <?php if($counter == 6){break;} ?>
         <div class="carousel-item <?php if ($counter == 1){echo'active';}?>" data-interval="10000">
           <img class="carousel-item-img d-block w-100" src="<?=$pos['gambar'];?>" alt="">
           <div class="carousel-caption d-none d-md-block ">
