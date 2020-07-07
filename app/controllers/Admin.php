@@ -10,16 +10,24 @@ class Admin extends controller{
     }
 
     public function viewTambah(){
+        if(!isset($_SESSION['Level'])){
+            header('Location: '.BASEURL.'Home');
+        }else{
         $data['judul'] = 'Admin | '.$_SESSION['userName']; // 
         $this->view('templates/header',$data); // menampilkan view dari views/templates/header
         $this->view('Admin/Tambah',$data); // menampilkan view dari views/Home/index
         $this->view('templates/footer'); // menampilkan view dari views/templates/footer
     }
+    }
     public function viewUbah(){
+        if(!isset($_SESSION['Level'])){
+            header('Location: '.BASEURL.'Home');
+        }else{
         $data['judul'] = 'Admin | '.$_SESSION['userName']; // 
         $this->view('templates/header',$data); // menampilkan view dari views/templates/header
         $this->view('Admin/Ubah',$data); // menampilkan view dari views/Home/index
         $this->view('templates/footer'); // menampilkan view dari views/templates/footer
+        }
     }
 
 
@@ -131,12 +139,21 @@ class Admin extends controller{
     }
 
     public function Pengunguman(){
-        $data = [
-            'keterangan' => $_POST['keteranganPengunguman']
+        $timeout = explode('-',$_POST['timeout']);
+        $truetimeout = $timeout[0].$timeout[1].$timeout[2];
+        $databefore = [
+            'keterangan' => $_POST['keteranganPengunguman'],
+            'timeout' => $truetimeout
         ];
         
-        Flasher::setPengunguman($data['keterangan']);
-        header('Location: '.BASEURL.'');
+        $this->model('notifikasi_model')->tambah($databefore);
+        $datafromdb = $this->model('notifikasi_model')->getNotifikasi();
+        $dataafter = [
+            'keterangan' => $datafromdb['pesan'],
+            'timeout' => $datafromdb['timeout']
+        ];
+        Flasher::setPengunguman($dataafter);
+        header('Location: '.BASEURL.'Home');
     }
 
 }

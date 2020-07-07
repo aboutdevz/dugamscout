@@ -37,8 +37,7 @@ class Login extends Controller{
     public function Logout(){
         
         header('Location:'.BASEURL.'Home');
-        session_unset();
-        session_destroy();
+        unset($_SESSION['Level']);
     }
 
     

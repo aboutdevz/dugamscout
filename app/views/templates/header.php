@@ -34,7 +34,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light shadow">
-            <a class="navbar-brand" href="#"><img class="d-inline-block" style="height:10vw;width:auto;" src="<?=BASEURL?>img/favicon.png"/></a>
+            <a class="navbar-brand" href="<?=BASEURL.'Home'?>"><img class="d-inline-block" style="height:10vw;width:auto;" src="<?=BASEURL?>img/favicon.png"/></a>
             <h4 class="text-center font-weight-bold">Dugam Scout</h4>
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -7,7 +7,7 @@ if ($protcheck == "on"){
     $prot = 'http://';
 }
 $host = $_SERVER['HTTP_HOST'];
-$path = $prot.$host.'/public/';
+$path = $prot.$host.'/dugamscout/public/';
 
 // base url
 define('BASEURL',$path);

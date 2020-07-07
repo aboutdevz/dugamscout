@@ -37,6 +37,10 @@
         <label>keterangan</label>
         <textarea class="form-control" id="keterangan" name="keteranganPengunguman" rows="3" required></textarea>
       </div>
+      <div class="form-group mt-5">
+        <label>Di Set Sampai </label>
+        <input class="form-control" type="date" name="timeout" required>
+      </div>
 
       <div class="form-group row">
         <div class="col-12">
