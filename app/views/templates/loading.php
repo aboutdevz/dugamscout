@@ -14,6 +14,11 @@
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  position: absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +27,6 @@
 .loader {
   text-align: center;
   vertical-align: middle;
-  position: absolute;
   display: flex;
   padding: 150px;
   
