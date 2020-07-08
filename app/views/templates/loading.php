@@ -24,7 +24,6 @@
   vertical-align: middle;
   position: absolute;
   display: flex;
-  background: white;
   padding: 150px;
   
 }
