@@ -14,11 +14,13 @@
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  position: absolute;
+  position: fixed;
   height:100%;
   width:100%;
   top:0;
   left:0;
+  z-index:1000;
+  background-color:#fff;
   display: flex;
   justify-content: center;
   align-items: center;
