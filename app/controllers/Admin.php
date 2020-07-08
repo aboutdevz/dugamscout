@@ -4,6 +4,7 @@ class Admin extends controller{
  
     public function index(){
         $data['judul'] = 'Admin | '.$_SESSION['userName']; // 
+        $this->view('templates/loading');
         $this->view('templates/header',$data); // menampilkan view dari views/templates/header
         $this->view('Home/index',$data); // menampilkan view dari views/Home/index
         $this->view('templates/footer'); // menampilkan view dari views/templates/footer
@@ -15,6 +16,7 @@ class Admin extends controller{
         }else{
         $data['judul'] = 'Admin | '.$_SESSION['userName']; // 
         $this->view('templates/header',$data); // menampilkan view dari views/templates/header
+        $this->view('templates/loading');
         $this->view('Admin/Tambah',$data); // menampilkan view dari views/Home/index
         $this->view('templates/footer'); // menampilkan view dari views/templates/footer
     }
@@ -25,6 +27,7 @@ class Admin extends controller{
         }else{
         $data['judul'] = 'Admin | '.$_SESSION['userName']; // 
         $this->view('templates/header',$data); // menampilkan view dari views/templates/header
+        $this->view('templates/loading');
         $this->view('Admin/Ubah',$data); // menampilkan view dari views/Home/index
         $this->view('templates/footer'); // menampilkan view dari views/templates/footer
         }
@@ -39,12 +42,12 @@ class Admin extends controller{
             'author' => $_SESSION['userName'],
             'tanggal' => ''.date("Y/m/d/h:i:s:a").''
         ];
-        $getTag = $data['post']['tagUbah'];
+        $getTag = $data['post']['tag'];
         if (isset($data['post']['addPostingan'])){
 
             if(!isset($data['file']['tmp_name'])){
                 Flasher::setFlash('Gambar','Silahkan Dipilih','danger');
-                header('Location: '.BASEURL.'Nav/index/'.$getTag['tag'].'');
+                header('Location: '.BASEURL.'Nav/index/'.$getTag.'');
             }else{
                     $gambar = $data['file']['tmp_name'];
                     $fileNama = $data['file']['name'];
@@ -109,7 +112,7 @@ class Admin extends controller{
             }elseif(strlen($data['file']['name'])>0){
                 if(!isset($data['file']['tmp_name'])){
                     Flasher::setFlash('Gambar','Silahkan Dipilih','danger');
-                    header('Location: '.BASEURL.'Nav/index/'.$getTag['tag'].'');
+                    header('Location: '.BASEURL.'Nav/index/'.$getTag.'');
                 }else{
                         $fileNama = $data['file']['name'];
                         $fileSize = $data['file']['size'];

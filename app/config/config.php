@@ -1,5 +1,5 @@
 <?php
-$protcheck = $_SERVER['HTTPS'];
+$protcheck = "off";
 $prot;
 if ($protcheck == "on"){
     $prot = 'https://';

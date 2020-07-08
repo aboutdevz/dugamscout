@@ -8,6 +8,7 @@ class Home extends Controller{
             'postinganHome1' => $this->model('Postingan_model')->getALlPostingan(),
             'content' => $this->model('Postingan_model')->getNav('kegiatan')
         ];
+        $this->view('templates/loading');
         $this->view('templates/header',$data); // menampilkan view dari views/templates/header
         $this->view('templates/hero',$data); // menampilkan view dari views/templates/header
         $this->view('Home/index',$data); // menampilkan view dari views/Home/index

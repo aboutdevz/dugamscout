@@ -19,6 +19,7 @@ class Nav extends controller{
         }else{
             $this->data['state'] = FALSE;
         }
+        $this->view('templates/loading');
         $this->view('templates/header',$data);
         $this->view('Nav/index',$data);
         $this->view('templates/footer');
