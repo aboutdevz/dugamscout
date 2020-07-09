@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="content m-5">
-                <p class="text-break">
+                <p class="text-break mt-5 mb-5" style="font-size:20px;">
                     '.$isi.'
                 </p>
             </div>

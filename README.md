@@ -22,10 +22,11 @@ https://github.com/aboutdevz/dugamscout/wiki
 ## Upcoming Features
 
 -   pengunguman / informasi     :heavy_check_mark:
--   pengkelasan admin
+-   api google drive   
 -   administrasi umum dan personal di pisah
 -   profil anggota dan pembina di list berdasarkan tahun
 -   nav prestasi
 -   api google map
 -   graph jumlah anggota dari tahun ke tahun
 -   point of sale kedai pramuka
+-   initial setup web
