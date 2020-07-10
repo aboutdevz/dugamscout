@@ -13,6 +13,13 @@ class Home extends Controller{
         $this->view('templates/hero',$data); // menampilkan view dari views/templates/header
         $this->view('Home/index',$data); // menampilkan view dari views/Home/index
         $this->view('templates/footer'); // menampilkan view dari views/templates/footer
+
+        $datafromdb = $this->model('notifikasi_model')->getNotifikasi();
+        $dataafter = [
+            'keterangan' => $datafromdb['pesan'],
+            'timeout' => $datafromdb['timeout']
+        ];
+        Flasher::setPengunguman($dataafter);
     }
 
 }

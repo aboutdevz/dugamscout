@@ -107,7 +107,7 @@ class Admin extends controller{
             if (strlen($data['post']['namaGambar'])>0){
                 $data['image'] = $_POST['namaGambar'];
                 $this->model('Postingan_model')->updatePostingan($data);
-                Flasher::setFlash('Postingan Berhasil','Di Update','success');
+                Flasher::setFlash(' Di Update','Postingan Berhasil','success');
                 header('Location: '.BASEURL.'Admin/viewTambah');
             }elseif(strlen($data['file']['name'])>0){
                 if(!isset($data['file']['tmp_name'])){
@@ -127,11 +127,11 @@ class Admin extends controller{
                             }else{
                                     $this->model('Postingan_model')->updatePostingan($data);
                                     move_uploaded_file($data['file']['tmp_name'],$targetfile);
-                                    Flasher::setFlash('Postingan Berhasil','Di Update','success');
+                                    Flasher::setFlash('Di Update','Postingan Berhasil','success');
                                     header('Location: '.BASEURL.'Nav/index/'.''.$getTag.'');
                                 }
                             }else{
-                                Flasher::setFlash('Postingan gagal','Di Update','danger');
+                                Flasher::setFlash(' Di Update','Postingan gagal','danger');
                                 header('Location: '.BASEURL.'Nav/index/'.''.$getTag.'');
                         }
                 
@@ -150,13 +150,8 @@ class Admin extends controller{
         ];
         
         $this->model('notifikasi_model')->tambah($databefore);
-        $datafromdb = $this->model('notifikasi_model')->getNotifikasi();
-        $dataafter = [
-            'keterangan' => $datafromdb['pesan'],
-            'timeout' => $datafromdb['timeout']
-        ];
-        Flasher::setPengunguman($dataafter);
-        header('Location: '.BASEURL.'Home');
+        Flasher::setFlash('Di Tambahkan','Notifikasi Berhasil','success');
+        header('Location: '.BASEURL.'Admin/viewTambah');
     }
 
 }
