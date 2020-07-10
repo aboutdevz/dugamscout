@@ -13,25 +13,25 @@ class Login extends Controller{
 
     public function Login(){
         if (isset($_POST['submit_Lgn'])){
-            $data = $this->model('User_model')->getData($_POST);
-            if ($this->model('User_model')->getUser($_POST)>0){
-                if ($data['Level'] == 'admin'){
-                    $_SESSION['userId'] = $data['id'];
-                    $_SESSION['Level'] = $data['Level'];
-                    $_SESSION['userName'] = $data['Uname'];
-                    header('Location:'.BASEURL.'Home');
-                    exit();
-                }else{
-                    $_SESSION['userId'] = $data['id'];
+            $data = $this->model('User_model')->getUser($_POST);
+            $rowcount = $data['rowCount'];
+            $single = $data['single'];
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+            $passcheck = password_verify($pass,$single['Upass']);
+            
+                if ($single['Uname'] == $user && $passcheck == TRUE && $single['Level'] == 'admin'){
+                    $_SESSION['userId'] = $single['id'];
+                    $_SESSION['Level'] = $single['Level'];
+                    $_SESSION['userName'] = $single['Uname'];
                     header('Location:'.BASEURL.'Home');
                     exit();
                 }
-            }
-            else{
-                header('Location:'.BASEURL.'Login');
-                Flasher::setFlash('Login','Gagal','danger');
-                exit();
-            }
+                else{
+                    header('Location:'.BASEURL.'Login');
+                    Flasher::setFlash('Login','Gagal','danger');
+                    exit();
+                }
         }
     }
 

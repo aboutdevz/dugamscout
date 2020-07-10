@@ -10,21 +10,14 @@ class User_model{
     }
 
     public function getUser($data){
-        $query = "SELECT * FROM $this->table WHERE Uname=:username AND Upass=:pass";
+        $query = "SELECT * FROM $this->table WHERE Uname=:username";
         $this->db->query($query);
         $this->db->bind('username',$data['username']);
-        $this->db->bind('pass',$data['password']);
-        $this->result = $this->db->single();
-        return $this->db->rowCount();
-    }
-
-    public function getData($data){
-        $query = "SELECT * FROM $this->table WHERE Uname=:username AND Upass=:pass";
-        $this->db->query($query);
-        $this->db->bind('username',$data['username']);
-        $this->db->bind('pass',$data['password']);
-        $this->result = $this->db->single();
-        return $this->db->single();
+        $data = [
+            'rowCount' => $this->db->rowCount(),
+            'single' => $this->result = $this->db->single()
+        ];
+        return $data;
     }
     
 }
