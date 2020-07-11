@@ -1,14 +1,6 @@
 <?php
 
 class Admin extends controller{
- 
-    public function index(){
-        $data['judul'] = 'Admin | '.$_SESSION['userName']; // 
-        $this->view('templates/loading');
-        $this->view('templates/header',$data); // menampilkan view dari views/templates/header
-        $this->view('Home/index',$data); // menampilkan view dari views/Home/index
-        $this->view('templates/footer'); // menampilkan view dari views/templates/footer
-    }
 
     public function viewTambah(){
         if(!isset($_SESSION['Level'])){
@@ -151,6 +143,7 @@ class Admin extends controller{
         
         $this->model('notifikasi_model')->tambah($databefore);
         Flasher::setFlash('Di Tambahkan','Notifikasi Berhasil','success');
+        unset($_SESSION['pengunguman']);
         header('Location: '.BASEURL.'Admin/viewTambah');
     }
 

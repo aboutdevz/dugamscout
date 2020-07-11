@@ -2,6 +2,13 @@
 
 class Home extends Controller{
     public function index(){ // method index pada controlller home 
+        $datafromdb = $this->model('notifikasi_model')->getNotifikasi();
+        $dataafter = [
+            'keterangan' => $datafromdb['pesan'],
+            'timeout' => $datafromdb['timeout']
+        ];
+        Flasher::setPengunguman($dataafter);
+
         $data = [
             'judul' => 'Home',
             'postingan' => $this->model('Postingan_model')->getAllPostingan(),
@@ -14,12 +21,7 @@ class Home extends Controller{
         $this->view('Home/index',$data); // menampilkan view dari views/Home/index
         $this->view('templates/footer'); // menampilkan view dari views/templates/footer
 
-        $datafromdb = $this->model('notifikasi_model')->getNotifikasi();
-        $dataafter = [
-            'keterangan' => $datafromdb['pesan'],
-            'timeout' => $datafromdb['timeout']
-        ];
-        Flasher::setPengunguman($dataafter);
+        
     }
 
 }
