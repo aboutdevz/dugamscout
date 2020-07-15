@@ -8,7 +8,14 @@ class Home extends Controller{
             'timeout' => $datafromdb['timeout']
         ];
         Flasher::setPengunguman($dataafter);
-
+        $_SESSION['timeout'] = $dataafter['timeout'];
+        $session_life = date("Ymd");
+        $inactive = $_SESSION['timeout'];
+        if($session_life >= $inactive)
+        {  
+          unset($_SESSION['pengunguman']);
+          unset($inactive);
+        }
         $data = [
             'judul' => 'Home',
             'postingan' => $this->model('Postingan_model')->getAllPostingan(),
