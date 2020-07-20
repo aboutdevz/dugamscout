@@ -38,7 +38,7 @@
             foreach ($data['link'] as $pp){
             $pils = '<a id="delete" href="'.BASEURL.'Admin/Hapus/'.$pp['id'].'/'.$pp['tag'].'" class="badge badge-danger float-right mr-2" >Hapus</a>
             <!-- Button trigger modal -->
-            <a id="tampilUbah" href="'.BASEURL.'Admin/Ubah/'.$pp['id'].'" class="badge text-white float-right mr-2 badge-success" data-id="'.$pp['id'].'" data-toggle="modal" data-target="#modalUbah">
+            <a id="tampilUbah" href="'.BASEURL.'Admin/Ubah/'.$pp['id'].'" class="badge text-white float-right mr-2 badge-success tampilUbah" data-id="'.$pp['id'].'" data-toggle="modal" data-target="#modalUbah">
                 Ubah
             </a>';
         }

@@ -78,6 +78,11 @@
         <textarea class="form-control" id="keterangan" name="keterangan" rows="3" required></textarea>
       </div>
       <div class="form-group">
+        
+          <button id="buttonHref" type="button" class="btn btn-secondary buttonHref">href</button>
+      
+      </div>
+      <div class="form-group">
         <label>Isi</label>
         <textarea class="form-control" id="isi" name="isi" rows="6" required></textarea>
       </div>
@@ -95,3 +100,5 @@
 </div>
 </div>    
 </div>
+
+
