@@ -79,7 +79,9 @@
       </div>
       <div class="form-group">
         
-          <button id="buttonHref" type="button" class="btn btn-secondary buttonHref">href</button>
+          <button type="button" class="btn btn-secondary buttonHref">href</button>
+          <button type="button" class="btn btn-secondary buttonImg">img</button>
+          <button type="button" class="btn btn-secondary buttonQuote">Quote</button>
       
       </div>
       <div class="form-group">

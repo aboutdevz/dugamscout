@@ -12,7 +12,7 @@ class Nav extends controller{
         $data = [
             'judul' => '',
             'link' => $link,
-            'state'=> 'admin'
+            'state'=> 'Admin'
         ];
         if (isset($_SESSION['Level'])=='admin'){
             $this->data['state'] = TRUE;
